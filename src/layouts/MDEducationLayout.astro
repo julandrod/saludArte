@@ -1,0 +1,23 @@
+---
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import BaseLayout from "./BaseLayout.astro";
+import SectionTitle from "../components/SectionTitle.astro";
+const {
+  frontmatter: { title, image },
+} = Astro.props;
+---
+
+<BaseLayout>
+  <Navbar />
+  <section class="md:px-20 md:py-8 mx-auto md:relative z-0 bg-cover">
+    <SectionTitle title={title} />
+    <div class="flex mt-20 px-0 md:px-8 flex-col-reverse lg:flex-row">
+      <div class="flex flex-col">
+        <slot />
+      </div>
+      <img src={image} alt="imagen" class="lg:pl-6 h-fit" />
+    </div>
+  </section>
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,19 @@
+---
+const { title, description, image } = Astro.props;
+---
+
+<div
+  class="md:p-8 grid grid-rows-3 md:grid-rows-card-rows h-[400px] text-zinc-900 m-6 justify-items-center"
+>
+  <div
+    class="flex bg-[#9F5DB1] w-20 h-20 rounded-full items-center justify-center m-1"
+  >
+    <img class="w-14 h-14" src={image} alt={title} />
+  </div>
+  <div class="flex-1 m-1">
+    <h2 class="text-2xl font-medium">{title}</h2>
+  </div>
+  <div class="flex-2">
+    <span class="text-lg font-light">{description}</span>
+  </div>
+</div>

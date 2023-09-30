@@ -1,0 +1,33 @@
+---
+import { logoSmall } from "../assets";
+import { navLinks } from "../data";
+---
+
+<nav
+  class="bg-white w-full flex py-2 top-0 z-20 justify-between items-center mx-auto px-16 bg-center text-[#9F5DB1] font-semibold"
+>
+  <div class="flex flex-1">
+    <a href="/" class="flex justify-center items-center bg-white rounded-md">
+      <img class="w-20 h-20 rounded-lg" src={logoSmall} alt="" />
+      <div>
+        <span class="ml-2 text-2xl font-bold text-[#9F5DB1]">SALUD</span><span
+          class="mr-4 text-3xl font-bold text-[#EB4963]">ARTE</span
+        >
+      </div>
+    </a>
+  </div>
+  <div class="flex flex-2">
+    <ul class="list-none hidden lg:flex lg:flex-row gap-10">
+      {
+        navLinks.map((item) => (
+          <li class="hover:scale-105 hover:underline underline-offset-8 hover:text-secondary text-lg">
+            <a href={item.url}>{item.title}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+  <div class="sm:flex flex-1 hidden justify-end">
+    <p class="text-lg"><span class="mr-2">📞</span> 316 248 4028</p>
+  </div>
+</nav>

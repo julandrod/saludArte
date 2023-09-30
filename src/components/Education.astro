@@ -1,0 +1,21 @@
+---
+import EducationCard from "./EducationCard.astro";
+import SectionTitle from "./SectionTitle.astro";
+const allEducation = await Astro.glob("../pages/educacion/*.md");
+---
+
+<div class="mt-12">
+  <SectionTitle title="Información útil sobre la hipertensión" />
+  <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 m-8 py-8">
+    {
+      allEducation.map((item, idx) => (
+        <EducationCard
+          title={item.frontmatter.title}
+          description={item.frontmatter.description}
+          url={item.url}
+          bgColor={idx}
+        />
+      ))
+    }
+  </section>
+</div>

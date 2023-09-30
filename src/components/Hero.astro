@@ -1,0 +1,35 @@
+---
+import { doctors, separatorCard } from "../assets";
+import SectionLayout from "../layouts/SectionLayout.astro";
+
+
+---
+
+<SectionLayout
+  backgroundImage="bg-hero-pattern-purple bg-cover bg-no-repeat bg-top min-h-fit"
+>
+  <section class="flex flex-col-reverse md:flex-row">
+    <div class="md:relative top-[55px] left-0">
+      <img class="md:w-[500px] xl:w-[700px] h-auto" src={doctors} alt="" />
+    </div>
+    <div class="relative p-1 md:p-4 m-2 md:m-6 md:top-5 md:left-10 sm:w-[600px] xl:w-[700px]">
+      <h1
+        class="text-white text-xl md:text-2xl lg:text-4xl font-semibold leading-snug md:leading-relaxed mb-6 xl:mb-10"
+      >
+        ¿Cuál es la forma más eficaz de <br /> saber si tienes Hipertensión
+        arterial?
+      </h1>
+      <img class="h-1 w-44 my-6" src={separatorCard} alt="small separator" />
+      <h3
+        class="mt-8 text-white text-lg sm:text-2xl leading-6 md:leading-relaxed mb-6 xl:mb-10"
+      >
+        Existe un método técnico no invasivo, que mide <br /> la presión
+        arterial durante 24 horas
+      </h3>
+      <a
+        class="cursor-pointer mt-6 xl:mt-10 text-[#9F5DB1] font-bold py-3 px-6 rounded-3xl bg-white hover:text-white hover:bg-[#EB4963]"
+        href="#services">Conoce más sobre nuestros servicios</a
+      >
+    </div>
+  </section>
+</SectionLayout>

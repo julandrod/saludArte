@@ -1,0 +1,11 @@
+---
+const { id, bgColor, backgroundImage } = Astro.props;
+---
+
+<section
+  id={id}
+  class={`${bgColor} md:px-6 md:py-8 mx-auto md:relative z-0 ${backgroundImage}`}
+>
+  <span class="hash-span"> &nbsp;</span>
+  <slot />
+</section>

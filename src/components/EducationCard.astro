@@ -1,0 +1,24 @@
+---
+const { title, description, bgColor, url } = Astro.props;
+
+import { separatorCard } from "../assets";
+---
+
+<div
+  class:list={[
+    "flex flex-col h-80 px-4 py-10 text-white items-left justify-center hover:scale-110",
+    {
+      "bg-custom-color-0": bgColor === 0,
+      "bg-custom-color-1": bgColor === 1,
+      "bg-custom-color-2": bgColor === 2,
+      "bg-custom-color-3": bgColor === 3,
+    },
+  ]}
+>
+  <h3 class="text-3xl">{title}</h3>
+  <img class="h-1 w-28 my-6" src={separatorCard} alt="small separator" />
+  <span class="my-6">{description}</span>
+  <a class="italic font-semibold underline" href={url} target="_self"
+    >Aprender más...</a
+  >
+</div>
