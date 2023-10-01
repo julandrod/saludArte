@@ -1,6 +1,6 @@
 ---
 import { logoBig, mapaUser } from "../assets";
-import { idPages, services } from "../data";
+import { contactInfo, idPages, services } from "../data";
 import SectionLayout from "../layouts/SectionLayout.astro";
 import SectionTitle from "./SectionTitle.astro";
 import ServiceCard from "./ServiceCard.astro";
@@ -22,13 +22,13 @@ import ServiceCard from "./ServiceCard.astro";
     }
   </div>
   <div class="flex items-center justify-center">
-    <div class="flex items-center justify-center w-4/6 flex-col lg:flex-row">
-      <img class="flex-2 h-52" src={logoBig} alt="logo saludarte" />
+    <div class="flex items-center justify-center w-4/6 flex-col lg:flex-row border-4 border-secondary rounded-lg">
+      <img class="flex-2 h-52 rounded-l-lg" src={logoBig} alt="logo saludarte" />
       <div class="flex-1 flex flex-col justify-center items-center">
         <h2 class="text-zinc-900 text-5xl font-bold">Agenda tu cita</h2>
-        <p class="text-zinc-900 text-4xl mt-6">🗓️ 316 248 4028</p>
+        <p class="text-zinc-900 text-4xl mt-6">🗓️ {contactInfo.phones[0]}</p>
       </div>
-      <img class="flex-2 h-52" src={mapaUser} alt="usuario mapa" />
+      <img class="flex-2 h-52 rounded-r-lg" src={mapaUser} alt="usuario mapa" />
     </div>
   </div>
 </SectionLayout>

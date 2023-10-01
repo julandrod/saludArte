@@ -1,4 +1,10 @@
-import { bloodPressureSvg, facebookIcon, instagramIcon, linkedinIcon, whatsappIcon } from "./assets";
+import {
+  bloodPressureSvg,
+  facebookIcon,
+  instagramIcon,
+  linkedinIcon,
+  whatsappIcon,
+} from "./assets";
 import doctorSvg from "./assets/doctor.svg?url";
 
 const idPages = {
@@ -84,6 +90,11 @@ const socials = [
     url: "https://www.linkedin.com/in/saludarte-empresa/",
     icon: linkedinIcon,
   },
-]
+];
 
-export { idPages, navLinks, services, education, socials };
+const contactInfo = {
+  phones: ["316 248 4028"],
+  email: [],
+};
+
+export { idPages, navLinks, services, education, socials, contactInfo };
