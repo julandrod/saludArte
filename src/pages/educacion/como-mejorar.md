@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/MDEducationLayout.astro
-title: Como mejorar la hipertensión
+title: ¿Cómo mejorar la hipertensión?
 image: /src/assets/mejorar-hipertension.jpg
 description: Consejos utiles para mejorar la hipertensión.
 ---

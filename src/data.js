@@ -21,7 +21,7 @@ const navLinks = [
   },
   {
     id: idPages.about,
-    title: "Quienes Somos",
+    title: "¿Quiénes Somos?",
     url: `#${idPages.about}`,
   },
   {

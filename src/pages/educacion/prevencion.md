@@ -2,7 +2,7 @@
 layout: ../../layouts/MDEducationLayout.astro
 title: Cuidados y prevención
 image: /src/assets/cuidados.jpg
-description: Como evitar y cuidarnos de la hipertensión.
+description: ¿Cómo evitar y cuidarnos de la hipertensión?
 ---
 <div class="flex flex-col px-2 md:px-8">
 <p class="text-lg text-zinc-900 leading-loose tracking-wide mb-6">

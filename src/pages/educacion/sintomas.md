@@ -1,8 +1,8 @@
 ---
 layout: ../../layouts/MDEducationLayout.astro
-title: Sintomas de la hipertensión arterial
+title: Síntomas de la hipertensión arterial
 image: /src/assets/sintomas.jpg
-description: Conoce los sintomas de la hipertension arterial.
+description: Conoce los síntomas de la hipertension arterial.
 ---
 <div class="flex flex-col px-2 md:px-8">
 <p class="text-lg text-zinc-900 leading-loose tracking-wide mb-6">
