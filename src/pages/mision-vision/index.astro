@@ -1,0 +1,60 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+import SectionLayout from "../../layouts/SectionLayout.astro";
+import { idPages } from "../../data";
+import { misionMonitor, visionMonitor } from "../../assets";
+import SectionTitle from "../../components/SectionTitle.astro";
+---
+
+<BaseLayout>
+  <Navbar />
+
+  <SectionLayout
+    id={idPages.misionVision}
+    backgroundImage="bg-about-pattern-purple bg-cover bg-no-repeat bg-top min-h-screen"
+  >
+    <div class="flex flex-col md:flex-row md:mt-8">
+      <div class="flex-1 m-4 p-4 md:p-8 md:m-8">
+        <SectionTitle title="Misión" />
+        <p class="text-xl text-zinc-900 leading-loose tracking-wide">
+          Ser referentes en el cuidado de la salud cardiovascular, brindar
+          información y ayudas diagnósticas a toda la población del Eje
+          Cafetero, servir como medio para un diagnóstico oportuno, mediante
+          monitorizaciones de 24 horas de la presión arterial, toma de
+          electrocardiograma y consultas médicas comprometidas, ser asequibles y
+          accesibles a toda la comunidad, generando un sentido de
+          responsabilidad en la educación y la prevención de la hipertensión
+          arterial.
+        </p>
+      </div>
+      <div class="flex-1 mx-2 my-auto">
+        <img
+          class="rounded-lg"
+          src={misionMonitor}
+          alt="pressure-blood-background"
+        />
+      </div>
+    </div>
+    <div class="flex flex-col md:flex-row md:mt-8">
+      <div class="flex-1 mx-2 my-auto">
+        <img
+          class="rounded-lg"
+          src={visionMonitor}
+          alt="pressure-blood-background"
+        />
+      </div>
+      <div class="flex-1 m-4 p-4 md:p-8 md:m-8">
+        <SectionTitle title="Visión" />
+        <p class="text-xl text-zinc-900 leading-loose tracking-wide">
+          En 2026 llegar a ser parte del equipo HEARTS de la OPS, para ser
+          reconocidos como una entidad que vela por la salud cardiovascular de
+          los quindianos. <br />
+        </p>
+      </div>
+    </div>
+  </SectionLayout>
+
+  <Footer />
+</BaseLayout>

@@ -6,10 +6,10 @@ import SectionTitle from "./SectionTitle.astro";
 import ServiceCard from "./ServiceCard.astro";
 ---
 
-<SectionLayout id={idPages.services}>
+<SectionLayout id={idPages.services} backgroundImage="bg-section-pattern bg-cover bg-no-repeat bg-top min-h-screen">
   <SectionTitle title="Nuestros servicios" />
   <div
-    class="grid grid-cols-1 md:grid-cols-2 gap-2 items-center justify-center"
+    class="flex flex-col md:flex-wrap md:flex-row gap-2 items-center justify-center mb-12"
   >
     {
       services.map((service) => (
@@ -22,7 +22,7 @@ import ServiceCard from "./ServiceCard.astro";
     }
   </div>
   <div class="flex items-center justify-center">
-    <div class="flex items-center justify-center w-4/6 flex-col lg:flex-row border-4 border-secondary rounded-lg">
+    <div class="flex bg-white items-center justify-center w-4/6 flex-col lg:flex-row border-4 border-secondary rounded-lg">
       <img class="flex-2 h-52 rounded-l-lg" src={logoBig} alt="logo saludarte" />
       <div class="flex-1 flex flex-col justify-center items-center">
         <h2 class="text-zinc-900 text-5xl font-bold">Agenda tu cita</h2>

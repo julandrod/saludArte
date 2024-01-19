@@ -1,8 +1,12 @@
 import {
+  bloodPressureMonitor,
   bloodPressureSvg,
+  doctorVisit,
+  educationIcon,
   facebookIcon,
   instagramIcon,
   linkedinIcon,
+  monitor,
   whatsappIcon,
 } from "./assets";
 import doctorSvg from "./assets/doctor.svg?url";
@@ -10,6 +14,7 @@ import doctorSvg from "./assets/doctor.svg?url";
 const idPages = {
   services: "services",
   about: "about",
+  misionVision: "mision-vision",
   contact: "contact",
 };
 
@@ -17,32 +22,51 @@ const navLinks = [
   {
     id: idPages.services,
     title: "Servicios",
-    url: `#${idPages.services}`,
+    url: `/#${idPages.services}`,
   },
   {
     id: idPages.about,
     title: "¿Quiénes Somos?",
-    url: `#${idPages.about}`,
+    url: `/quienes-somos`,
+  },
+  {
+    id: idPages.misionVision,
+    title: "Misión y Visión",
+    url: "/mision-vision",
   },
   {
     id: idPages.contact,
     title: "Contacto",
-    url: `#${idPages.contact}`,
+    url: `/#${idPages.contact}`,
   },
 ];
 
 const services = [
   {
-    title: "MAPA (Monitoreo Ambulatorio de la Presión Arterial)",
-    description:
-      "Es un método técnico no invasivo que pretende obtener una medición de la presión arterial durante un período de 24 horas, de tal forma que los datos de tensión arterial recogidos puedan ser posteriormente analizados por un médico.",
-    image: bloodPressureSvg,
+    title: "Monitorización ambulatoria de la presión arterial (MAPA).",
+    description: "",
+    image: bloodPressureMonitor,
   },
   {
-    title: "Consultas de medicina general a domicilio",
-    description:
-      "Servicios médicos a domicilio. Tu salud, nuestra prioridad. Consultas, chequeos y cuidados en la comodidad de tu hogar. Atención profesional y dedicada.",
+    title: "Toma de la presión arterial por personal capacitado.",
+    description: "",
     image: doctorSvg,
+  },
+  {
+    title: "Electrocardiograma.",
+    description: "",
+    image: monitor,
+  },
+  {
+    title: "Visita médica domiciliaria.",
+    description: "",
+    image: doctorVisit,
+  },
+  {
+    title:
+      "Educación sobre la prevención y cuidados de la hipertensión arterial.",
+    description: "",
+    image: educationIcon,
   },
 ];
 

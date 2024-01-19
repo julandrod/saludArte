@@ -2,16 +2,14 @@
 const { title, description, image } = Astro.props;
 ---
 
-<div
-  class="md:p-8 grid grid-rows-3 md:grid-rows-card-rows h-[400px] text-zinc-900 m-6 justify-items-center"
->
+<div class="flex flex-col bg-white bg-opacity-70 w-full md:w-3/12 h-52 rounded-lg md:m-6 md:h-72 p-2 md:p-8 items-center justify-center text-zinc-900 hover:scale-105">
   <div
     class="flex bg-[#9F5DB1] w-20 h-20 rounded-full items-center justify-center m-1"
   >
-    <img class="w-14 h-14" src={image} alt={title} />
+    <img class="w-11 h-11" src={image} alt={title} />
   </div>
-  <div class="flex-1 m-1">
-    <h2 class="text-2xl font-medium">{title}</h2>
+  <div class="flex-1 my-6">
+    <h2 class="text-xl text-center font-medium">{title}</h2>
   </div>
   <div class="flex-2">
     <span class="text-lg font-light">{description}</span>

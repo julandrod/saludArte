@@ -18,6 +18,8 @@ import separatorPurple from "./separator-purple.png?url";
 import separator from "./separator.png?url";
 import symptoms from "./sintomas.jpg?url";
 import cardiovascular from "./sistema-cardiovascular.jpg?url";
+import misionMonitor from "./monitor-mision.jpg?url";
+import visionMonitor from "./monitor-vision.jpg?url";
 
 // SVG's
 import bloodPressureSvg from "./blood-pressure.svg?url";
@@ -26,6 +28,10 @@ import facebookIcon from "./icon-facebook.svg?url";
 import instagramIcon from "./icon-instagram.svg?url";
 import linkedinIcon from "./icon-linkedin.svg?url";
 import whatsappIcon from "./icon-whatsapp.svg?url";
+import doctorVisit from "./doctorVisit.svg?url";
+import monitor from "./monitor.svg?url";
+import educationIcon from "./education.svg?url";
+import bloodPressureMonitor from "./blood-pressure-monitor.svg?url";
 
 export {
   backgrounAboutPurple,
@@ -54,4 +60,10 @@ export {
   separatorPurple,
   symptoms,
   whatsappIcon,
+  doctorVisit,
+  monitor,
+  educationIcon,
+  bloodPressureMonitor,
+  misionMonitor,
+  visionMonitor
 };
