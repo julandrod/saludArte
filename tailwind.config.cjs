@@ -10,7 +10,7 @@ module.exports = {
         "about-pattern": "url('/src/assets/background-about.png')",
         "about-pattern-purple": "url('/src/assets/background-about-purple.png')",
         "footer-pattern": "url('/src/assets/chevron.png')",
-        "section-pattern": "url('src/assets/background-section.png')"
+        "section-pattern": "url('/src/assets/background-section.png')"
       },
       gridTemplateRows: {
         "card-rows": "120px 80px 100px",
