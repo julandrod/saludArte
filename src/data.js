@@ -117,7 +117,7 @@ const socials = [
 ];
 
 const contactInfo = {
-  phones: ["316 248 4028"],
+  phones: ["324 876 1872", "316 248 4028"],
   email: [],
 };
 
