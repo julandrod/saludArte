@@ -4,24 +4,27 @@ import SectionTitle from "./SectionTitle.astro";
 const allEducation = await Astro.glob("../pages/educacion/*.md");
 ---
 
-<div class="mt-12">
-  <SectionTitle title="Información útil sobre la hipertensión" />
-  <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 m-8 py-8">
-    <EducationCard
-      title="¿Cómo mejorar la hipertensión?"
-      description="Consejos utiles para mejorar la hipertensión."
-      url="/educacion/como-mejorar"
-      bgColor={0}
-    />
-    {
-      allEducation.map((item, idx) => (
+<section class="bg-slate-50 py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="fade-in">
+      <SectionTitle title="Información útil sobre la hipertensión" label="EDUCACIÓN" />
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 fade-in">
+      <EducationCard
+        title="¿Cómo mejorar la hipertensión?"
+        description="Consejos utiles para mejorar la hipertensión."
+        url="/educacion/como-mejorar"
+      />
+      {allEducation.map((item) => (
         <EducationCard
           title={item.frontmatter.title}
           description={item.frontmatter.description}
           url={item.url}
-          bgColor={idx+1}
         />
-      ))
-    }
-  </section>
-</div>
+      ))}
+    </div>
+
+  </div>
+</section>

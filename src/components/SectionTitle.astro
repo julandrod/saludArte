@@ -1,11 +1,12 @@
 ---
-import { separatorPurple } from "../assets";
-const { title } = Astro.props;
+/* label  — optional small-caps eyebrow text above the heading */
+const { title, label } = Astro.props;
 ---
 
-<div class="flex flex-col items-center px-8 ">
-  <h1 class="text-5xl font-semibold mb-8 text-zinc-900">{title}</h1>
-  <div class="mb-6">
-    <img src={separatorPurple} alt="separador de linea" />
-  </div>
+<div class="mb-10 md:mb-14">
+  <!-- {label && (
+    <p class="text-xs font-bold tracking-widest uppercase text-primary mb-3">{label}</p>
+  )} -->
+  <h2 class="text-3xl md:text-4xl font-bold text-slate-900 leading-tight">{title}</h2>
+  <div class="mt-4 w-12 h-1 bg-primary rounded-full"></div>
 </div>

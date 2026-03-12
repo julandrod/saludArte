@@ -1,34 +1,71 @@
 ---
 import { logoBig, mapaUser } from "../assets";
 import { contactInfo, idPages, services } from "../data";
-import SectionLayout from "../layouts/SectionLayout.astro";
 import SectionTitle from "./SectionTitle.astro";
 import ServiceCard from "./ServiceCard.astro";
 ---
 
-<SectionLayout id={idPages.services} backgroundImage="bg-section-pattern bg-cover bg-no-repeat bg-top min-h-screen">
-  <SectionTitle title="Nuestros servicios" />
-  <div
-    class="flex flex-col md:flex-wrap md:flex-row gap-4 md:gap-2 items-center justify-center mb-12 px-4"
-  >
-    {
-      services.map((service) => (
+<!-- ── Services grid ── -->
+<section id={idPages.services} class="scroll-mt-20 bg-white py-20 md:py-28">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="fade-in">
+      <SectionTitle title="Nuestros servicios" label="NUESTROS SERVICIOS" />
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 fade-in">
+      {services.map((service) => (
         <ServiceCard
           title={service.title}
-          description={service.description}
           image={service.image}
         />
-      ))
-    }
-  </div>
-  <div class="flex items-center justify-center">
-    <div class="flex bg-white items-center justify-center w-full mb-6 lg:w-4/6 flex-col lg:flex-row border-4 border-secondary rounded-lg">
-      <img class="flex-2 h-52 rounded-l-lg" src={logoBig} alt="logo saludarte" />
-      <div class="flex-1 flex flex-col justify-center items-center">
-        <h2 class="text-zinc-900 text-3xl lg:text-5xl font-bold">Agenda tu cita</h2>
-        <p class="text-zinc-900 text-4xl mt-6">🗓️ {contactInfo.phones[0]}</p>
-      </div>
-      <img class="flex-2 h-52 rounded-r-lg" src={mapaUser} alt="usuario mapa" />
+      ))}
     </div>
   </div>
-</SectionLayout>
+</section>
+
+<!-- ── Appointment CTA band ── -->
+<section class="relative overflow-hidden bg-primary py-16 md:py-24">
+  <!-- Decorative circles -->
+  <div class="pointer-events-none absolute -top-20 -left-20 w-72 h-72 rounded-full bg-white opacity-10"></div>
+  <div class="pointer-events-none absolute -bottom-24 -right-16 w-96 h-96 rounded-full bg-white opacity-10"></div>
+
+  <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col lg:flex-row items-center gap-10">
+
+      <img
+        class="h-36 lg:h-44 object-contain flex-shrink-0 drop-shadow-xl"
+        src={logoBig}
+        alt="SaludArte logo"
+      />
+
+      <div class="flex-1 text-center lg:text-left">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4 leading-tight">
+          Agenda tu cita hoy
+        </h2>
+        <p class="text-purple-200 text-lg mb-8">
+          Llámanos o escríbenos — te atendemos con gusto.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+          <a
+            href={`tel:${contactInfo.phones[0].replace(/\s/g, "")}`}
+            class="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-full bg-white text-primary font-bold text-lg hover:bg-slate-100 transition-colors shadow-lg"
+          >
+            🗓️ {contactInfo.phones[0]}
+          </a>
+          <a
+            href={`tel:${contactInfo.phones[1].replace(/\s/g, "")}`}
+            class="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-full border-2 border-white/40 text-white font-semibold text-lg hover:bg-white/10 transition-colors"
+          >
+            📞 {contactInfo.phones[1]}
+          </a>
+        </div>
+      </div>
+
+      <img
+        class="h-36 lg:h-44 object-contain flex-shrink-0 drop-shadow-xl hidden lg:block"
+        src={mapaUser}
+        alt="Mapa de atención"
+      />
+    </div>
+  </div>
+</section>

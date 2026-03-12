@@ -1,12 +1,32 @@
+---
+import '../styles/global.css';
+---
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="es" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+    <meta name="description" content="SaludArte — Monitorización de presión arterial (MAPA), electrocardiograma y visita médica domiciliaria en el Eje Cafetero, Colombia." />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <title>SaludArte</title>
   </head>
-  <body >
+  <body class="font-sans antialiased">
     <slot />
+
+    <script>
+      /* Fade-in on scroll via IntersectionObserver */
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add('is-visible');
+              io.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+      document.querySelectorAll('.fade-in').forEach((el) => io.observe(el));
+    </script>
   </body>
 </html>

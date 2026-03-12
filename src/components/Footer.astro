@@ -1,64 +1,103 @@
 ---
-import SectionLayout from "../layouts/SectionLayout.astro";
 import { logoBig } from "../assets";
-import { contactInfo, idPages, socials } from "../data";
+import { contactInfo, idPages, navLinks, socials } from "../data";
+
+const socialHover: Record<string, string> = {
+  Facebook:  "hover:bg-blue-500",
+  Instagram: "hover:bg-pink-500",
+  Whatsapp:  "hover:bg-green-500",
+  LinkedIn:  "hover:bg-blue-600",
+};
 ---
 
-<SectionLayout id={idPages.contact} backgroundImage="bg-footer-pattern">
-  <footer class="flex flex-col">
-    <div class="flex flex-col md:flex-row justify-center items-center md:items-start">
-      <div class="flex flex-col flex-1 justify-center items-center">
-        <h4
-          class="text-primary font-bold text-xl tracking-wider mb-6 mt-4 underline underline-offset-8"
-        >
-          Nuestras redes sociales
-        </h4>
-        <div class="flex items-center justify-items-center">
-          {
-            socials.map((social) => (
-              <a href={social.url} target="_blank" class="mx-3">
-                <img
-                  class="w-12 cursor-pointer hover:animate-bounce my-0 mx-auto "
-                  src={social.icon}
-                  alt={social.title}
-                />
-              </a>
-            ))
-          }
+<footer id={idPages.contact} class="scroll-mt-20 bg-slate-900 text-slate-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+
+    <!-- 3-column grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+
+      <!-- Col 1: Brand -->
+      <div class="flex flex-col gap-5">
+        <img
+          class="h-20 object-contain self-start"
+          src={logoBig}
+          alt="SaludArte logo"
+        />
+        <p class="text-sm text-slate-400 leading-relaxed max-w-xs">
+          Monitorización ambulatoria de la presión arterial y servicios cardiovasculares en el Eje Cafetero.
+        </p>
+        <!-- Social icons -->
+        <div class="flex items-center gap-3 mt-2">
+          {socials.map((social) => (
+            <a
+              href={social.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={social.title}
+              class={`w-10 h-10 flex items-center justify-center rounded-full bg-slate-800 transition-colors duration-200 ${socialHover[social.title] ?? "hover:bg-primary"}`}
+            >
+              <img class="w-5 h-5" src={social.icon} alt={social.title} />
+            </a>
+          ))}
         </div>
       </div>
-      <div class="flex flex-col flex-1 justify-center items-center">
-        <h4
-          class="text-primary font-bold text-xl tracking-wider mb-6 mt-4 underline underline-offset-8"
-        >
+
+      <!-- Col 2: Navigation links -->
+      <div>
+        <h4 class="text-xs font-bold tracking-widest uppercase text-slate-500 mb-6">
+          Navegación
+        </h4>
+        <ul class="space-y-3 list-none">
+          {navLinks.map((link) => (
+            <li>
+              <a
+                href={link.url}
+                class="text-sm text-slate-400 hover:text-white transition-colors duration-200"
+              >
+                {link.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Col 3: Contact -->
+      <div>
+        <h4 class="text-xs font-bold tracking-widest uppercase text-slate-500 mb-6">
           Comunícate con nosotros
         </h4>
-        <div class="flex flex-col items-center justify-center">
-          <span
-            class="text-secondary font-bold text-xl tracking-wider mb-6 text-center my-0 mx-auto"
-          >
-            <span class="mr-2">📞</span>{contactInfo.phones[0]}</span
-          >
-          <span
-            class="text-secondary font-bold text-xl tracking-wider mb-6 text-center my-0 mx-auto"
-          >
-            <span class="mr-2">📞</span>{contactInfo.phones[1]}</span
-          >
+        <div class="space-y-4">
+          {contactInfo.phones.map((phone) => (
+            <a
+              href={`tel:${phone.replace(/\s/g, "")}`}
+              class="flex items-center gap-3 text-slate-300 hover:text-white transition-colors duration-200 group"
+            >
+              <span class="w-8 h-8 flex items-center justify-center rounded-full bg-slate-800 group-hover:bg-primary transition-colors text-sm">
+                📞
+              </span>
+              <span class="font-semibold">{phone}</span>
+            </a>
+          ))}
         </div>
       </div>
-      <div class="flex flex-col flex-1 justify-center items-center">
-        <img class="h-56" src={logoBig} alt="logo" />
-      </div>
+
     </div>
-    <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" />
-    <div class="flex justify-center items-center">
-      <span class="text-slate-800"
-        >Hecho por <a
-          class="text-slate-950 underline hover:no-underline"
+
+    <!-- Bottom bar -->
+    <div class="mt-14 pt-8 border-t border-slate-800 flex justify-center">
+      <p class="text-sm text-slate-500">
+        Hecho por{" "}
+        <a
           href="https://julandrod.github.io/"
-          target="_blank">Julandrod</a
-        > | 2023 🇨🇴</span
-      >
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-slate-400 hover:text-white underline underline-offset-4 transition-colors"
+        >
+          Julandrod
+        </a>
+        {" "}| 2023 🇨🇴
+      </p>
     </div>
-  </footer>
-</SectionLayout>
+
+  </div>
+</footer>

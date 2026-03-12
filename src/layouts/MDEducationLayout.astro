@@ -10,14 +10,37 @@ const {
 
 <BaseLayout>
   <Navbar client:load />
-  <section class="md:px-20 md:py-8 mx-auto md:relative z-0 bg-cover">
-    <SectionTitle title={title} />
-    <div class="flex mt-20 px-0 md:px-8 flex-col-reverse lg:flex-row">
-      <div class="flex flex-col">
-        <slot />
+
+  <main class="bg-white py-20 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <SectionTitle title={title} label="EDUCACIÓN" />
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+
+        <!-- Markdown content -->
+        <div class="prose prose-slate prose-lg max-w-none
+          [&>p]:text-slate-700 [&>p]:leading-relaxed [&>p]:mb-5
+          [&>h2]:font-bold [&>h2]:text-slate-900 [&>h2]:mt-8 [&>h2]:mb-4
+          [&>ul]:text-slate-700 [&>ul]:pl-5 [&>ul]:list-disc [&>ul]:space-y-2
+          [&>ol]:text-slate-700 [&>ol]:pl-5 [&>ol]:list-decimal [&>ol]:space-y-2">
+          <slot />
+        </div>
+
+        <!-- Article image -->
+        {image && (
+          <div>
+            <img
+              src={image}
+              alt={title}
+              class="rounded-2xl shadow-xl w-full object-cover sticky top-24"
+            />
+          </div>
+        )}
+
       </div>
-      <img src={image} alt="imagen" class="lg:pl-6 h-fit" />
     </div>
-  </section>
+  </main>
+
   <Footer />
 </BaseLayout>
